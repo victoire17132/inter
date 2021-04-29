@@ -1,40 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Air Monitor</title>
+    <title>AQI</title>
     <script src="aqi.js"></script>
     <link rel='stylesheet' href='style.css'>
   </head>
   <body>
     <div class="container">
-      <h1> What are you breathing ? </h1>
+      <h1>Sens'Air</h1>
       <p class='time' id="time"></p>
-      <table>
-        <thead>
-          <tr id="historyTableHeader">
-            <th>time</th>
-            <th>pm2.5<br/>(µg/m³)</th>
-            <th>aqi<br/>(pm2.5)</th>
-            <th>pm10<br/>(µg/m³)</th>
-            <th>aqi<br/>(pm10)</th>
-          </tr>
-        </thead>
-        <tbody id="historyTable">
-        </tbody>
-      </table>
-      <div class="link">
-        <a href="#" onclick="showPrevHistory()">older</a>
-        <span id="currentRowsPage"></span>
-        <a href="#" onclick="showNextHistory()">newer</a>
+      <div class='aqi-container' id="containerPm25">
+          <div class='aqi-label'>AQI (PM2.5)</div>
+          <div class='aqi' id="aqiPm25"></div>
+          <div class='pm-label' id="pm25"></div>
       </div>
-      <div class="link">
-        <a href="/">current status</a>
+      <div class='aqi-container' id="containerPm10">
+          <div class='aqi-label'>AQI (PM10)</div>
+          <div class='aqi' id="aqiPm10"></div>
+          <div class='pm-label' id="pm10"></div>
       </div>
-    </div>
   </body>
   <script type="text/javascript">
-    getHistoryData();
+    getData();
+    setInterval(getData, 60000);
   </script>
 </html>
