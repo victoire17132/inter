@@ -3,8 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 const aqiHist = {
   maxRows: 100,
   data: [],
@@ -13,7 +11,7 @@ const aqiHist = {
 };
 
 function getData() {
-  fetch("coode.json").then(response => {
+  fetch("aqi.json").then(response => {
     response.json().then(data => {
       //console.log(data);
       updateHtml(data[data.length-1]);
@@ -24,7 +22,7 @@ function getData() {
 }
 
 function getHistoryData() {
-  fetch("coode.json").then(response => {
+  fetch("aqi.json").then(response => {
     response.json().then(data => {
       //console.log(data);
       aqiHist.data = data;
