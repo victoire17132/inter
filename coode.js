@@ -13,7 +13,7 @@ const aqiHist = {
 };
 
 function getData() {
-  fetch("aqi.json").then(response => {
+  fetch("coode.json").then(response => {
     response.json().then(data => {
       //console.log(data);
       updateHtml(data[data.length-1]);
@@ -24,7 +24,7 @@ function getData() {
 }
 
 function getHistoryData() {
-  fetch("aqi.json").then(response => {
+  fetch("coode.json").then(response => {
     response.json().then(data => {
       //console.log(data);
       aqiHist.data = data;
